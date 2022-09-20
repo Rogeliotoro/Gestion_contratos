@@ -11,15 +11,15 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h3 class="card-title "><strong>Expedientes</strong></h3>
+                            <h2 class="card-title ">Expedientes</h2>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
+                            <div class="table table-hover table-bordered">
                                 <table class="table">
                                     <thead class=" text-dark">
                                         <th>ID</th>
                                         <th>Code</th>
-                                        <th>Name</th>
+                                        <th>Nombre</th>
                                     </thead>
                                     <tbody>
                                         @foreach ($data as $key => $file)

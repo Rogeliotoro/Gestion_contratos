@@ -7,17 +7,18 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
+        <h2>Usuario: {{ $user->name }}</h2>
         <div class="card">
-            <div class="card-header">User
+            <div class="card-header">
                 @can('role-create')
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('users.index') }}">Back</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}">Atras</a>
                 </span>
                 @endcan
             </div>
             <div class="card-body">
                 <div class="lead">
-                    <strong>Name:</strong>
+                    <strong>Nombre:</strong>
                     {{ $user->name }}
                 </div>
                 <div class="lead">
@@ -25,11 +26,11 @@
                     {{ $user->email }}
                 </div>
                 <div class="lead">
-                    <strong>Password:</strong>
+                    <strong>Contraseña:</strong>
                     ********
                 </div>
                 <div class="lead">
-                    <strong>Roles:</strong>
+                    <strong>Rol:</strong>
                     {{ $user->getRoleNames() }}
                 </div>
                 

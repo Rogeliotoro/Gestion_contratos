@@ -10,15 +10,15 @@
         @endif
         <div class="card">
             <div class="card-header">
-                <h3><strong>Sociedades</strong></h3>
+                <h2>Sociedades</h2>
             </div>
             <div class="card-body">
-                <table class="table table-hover">
+                <table class="table table-hover table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Display Name</th>
-                            <th>Name</th>
+                            <th>Nombre</th>
                         </tr>
                     </thead>
                     <tbody>

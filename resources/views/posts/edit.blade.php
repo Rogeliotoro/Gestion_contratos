@@ -12,10 +12,11 @@
             </ul>
         </div>
         @endif
+        <h2>Editar Solicitud : {{ $post->id }}</h2>
         <div class="card">
-            <div class="card-header">Editar Solicitud
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}">Posts</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('posts.index') }}">Atras</a>
                 </span>
             </div>
             <div class="card-body">
@@ -27,10 +28,12 @@
                                 <h4><strong>Sociedad</strong></h4>
                             </div>
                             <div class="card-body">
+                                @can('post-edita')
                                 <div class="form-group">
                                     <strong>Estado:</strong>
-                                    {!! Form::select('estado', array('Pendiente' => 'Pendiente') , null, ['class' => 'form-select']) !!}
+                                    {!! Form::select('estado', array('Pendiente' => 'Pendiente', 'Aprobado' => 'Aprobado' , 'Revision' => 'Revision', 'Rechazado' => 'Rechazado') , null, ['class' => 'form-select']) !!}
                                 </div>
+                                @endcan
                             </div>
                             <div class="card-body">
                                 <div class="form-group">

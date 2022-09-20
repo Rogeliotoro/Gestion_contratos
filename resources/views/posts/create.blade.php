@@ -12,10 +12,11 @@
             </ul>
         </div>
         @endif
+        <h2>Crear Solicitud</h2>
         <div class="card shadow-sm p-3 mb-5 bg-body rounded">
             <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-outline-primary" href="{{ route('posts.index') }}">Solicitudes </a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('posts.index') }}">Atras </a>
                 </span>
             </div>
             <div class="card-body">

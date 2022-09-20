@@ -12,10 +12,11 @@
             </ul>
         </div>
         @endif
+        <h2>Crear Permisos</h2>
         <div class="card">
-            <div class="card-header"><h4><strong>Crear Permisos</strong></h4>
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-outline-primary btn-sm" href="{{ route('permissions.index') }}">Permissions</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('permissions.index') }}">Atras</a>
                 </span>
             </div>
             <div class="card-body">
@@ -24,7 +25,7 @@
                     <strong>Nombre:</strong>
                     {!! Form::text('name', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+                <button type="submit" class="btn btn-success btn-sm">Guardar</button>
                 {!! Form::close() !!}
             </div>
         </div>

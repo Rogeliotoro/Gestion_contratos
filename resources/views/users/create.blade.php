@@ -12,10 +12,11 @@
             </ul>
         </div>
         @endif
+        <h2>Crear Usuarios</h2>
         <div class="card">
-            <div class="card-header"><h4><strong>Crear Usuarios</strong></h4>
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-outline-primary btn-sm" href="{{ route('users.index') }}">Users</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}">Atras</a>
                 </span>
             </div>
 
@@ -41,7 +42,7 @@
                     <strong>Role:</strong>
                     {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
                 </div>
-                <button type="submit" class="btn btn-primary btn-sm">Crear</button>
+                <button type="submit" class="btn btn-success btn-sm">Guardar</button>
                 {!! Form::close() !!}
             </div>
         </div>

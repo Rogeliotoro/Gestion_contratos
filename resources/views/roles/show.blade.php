@@ -7,11 +7,12 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
+        <h2>Rol</h2>
         <div class="card">
-            <div class="card-header">Role
+            <div class="card-header">
                 @can('role-create')
                 <span class="float-right">
-                    <a class="btn btn-primary btn-sm" href="{{ route('roles.index') }}">Back</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('roles.index') }}">Atras</a>
                 </span>
                 @endcan
             </div>

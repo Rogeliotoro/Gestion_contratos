@@ -7,17 +7,18 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
+        <h2>Permisos</h2>
         <div class="card">
-            <div class="card-header">Permission
+            <div class="card-header">
                 @can('role-create')
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('permissions.index') }}">Back</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('permissions.index') }}">Atras</a>
                 </span>
                 @endcan
             </div>
             <div class="card-body">
                 <div class="lead">
-                    <strong>Name:</strong>
+                    <strong>Nombre:</strong>
                     {{ $permission->name }}
                 </div>
             </div>

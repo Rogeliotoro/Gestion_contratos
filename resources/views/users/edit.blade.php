@@ -12,36 +12,37 @@
             </ul>
         </div>
         @endif
+        <h2>Editar Usuario</h2>
         <div class="card">
-            <div class="card-header">Create user
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('users.index') }}">Users</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}">Atras</a>
                 </span>
             </div>
 
             <div class="card-body">
                 {!! Form::model($user, ['route' => ['users.update', $user->id], 'method'=>'PATCH']) !!}
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                    <strong>Nombre:</strong>
+                    {!! Form::text('name', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
                     <strong>Email:</strong>
                     {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
-                    <strong>Password:</strong>
-                    {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
+                    <strong>Contraseña:</strong>
+                    {!! Form::password('password', array('placeholder' => 'Contraseña','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
-                    <strong>Confirm Password:</strong>
-                    {!! Form::password('password_confirmation', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
+                    <strong>Confirmar Contraseña:</strong>
+                    {!! Form::password('password_confirmation', array('placeholder' => 'Confirma Contraseña','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
-                    <strong>Role:</strong>
+                    <strong>Rol:</strong>
                     {!! Form::select('roles[]', $roles, $userRole, array('class' => 'form-control','multiple')) !!}
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success btn-sm">Guardar</button>
                 {!! Form::close() !!}
             </div>
         </div>

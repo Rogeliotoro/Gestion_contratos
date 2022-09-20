@@ -37,7 +37,7 @@
                     @can('admin-list')
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-lock"></i> Administracion
+                            <i class="fa-solid fa-lock"></i> Administracion
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             @can('user-list')
@@ -63,7 +63,7 @@
                     @endcan
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="far fa-building"></i> Contratantes
+                            <i class="far fa-building"></i> Contratantes
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             @can('clientes-list')
@@ -72,12 +72,12 @@
                             @can('proveedores-list')
                             <li><a class="nav-link" href="#">Proveedores</a></li>
                             @endcan
-                          
+
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-landmark"></i> Maestros
+                            <i class="fas fa-landmark"></i> Maestros
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             @can('file-list')
@@ -93,7 +93,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
+                            <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -114,5 +114,4 @@
         @yield('content')
     </main>
 </body>
-
 </html>

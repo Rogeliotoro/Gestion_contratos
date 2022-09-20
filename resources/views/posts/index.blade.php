@@ -8,12 +8,12 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
+        <h2>Solicitudes</h2>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     @can('post-create')
                     <div class="card-header">
-                        <h2><strong>Solicitudes</strong></h2>
                         <span class="float-right">
                             <a class="btn btn-success btn-sm " href="{{ route('posts.create') }}"> Crear Solicitudes</a>
                         </span>
@@ -21,7 +21,7 @@
                     @endcan
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-hover table-bordered">
                                 <thead class=" text-dark">
                                     <th>Objeto</th>
                                     <th>Sociedad</th>
@@ -29,7 +29,7 @@
                                     <th>Firmante</th>
                                     <th>Importe</th>
                                     <th>Estado</th>
-                                    <th width="120px">Action</th>
+                                    <th width="150px"></th>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $key => $post)
@@ -42,14 +42,14 @@
                                         <td>{{ $post->estado }}</td>
                                        <td>
                                     
-                                            <a rel="tooltip" class="btn btn-primary btn-link" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
+                                            <a rel="tooltip" class="btn btn-default" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-eye " style="color: blue;"></i>
                                                 <div class="ripple-container"></div>
                                             </a>
                                        
                                         @can('post-edit')
                                         
-                                            <a rel="tooltip" class="btn btn-primary btn-link" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
+                                            <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: blue;"></i>
                                                 <div class="ripple-container"></div>
                                             </a>
@@ -58,7 +58,7 @@
                                         @can('post-delete')
                                     
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
-                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: blue;"></i>', ['class' => 'btn btn-primary btn-link', 'type' => 'submit']) }}
+                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: blue;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                             {!! Form::close() !!}
                                      
                                         @endcan

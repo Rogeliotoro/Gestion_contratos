@@ -12,20 +12,21 @@
             </ul>
         </div>
         @endif
+        <h2>Editar Rol</h2>
         <div class="card">
-            <div class="card-header">Edit role
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-primary btn-sm" href="{{ route('roles.index') }}">Roles</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('roles.index') }}">Atras</a>
                 </span>
             </div>
             <div class="card-body">
                 {!! Form::model($role, ['route' => ['roles.update', $role->id],'method' => 'PATCH']) !!}
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                    <strong>Nombre:</strong>
+                    {!! Form::text('name', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
-                    <strong>Permission:</strong>
+                    <strong>Permisios:</strong>
                     <br />
                     @foreach($permission as $value)
                     <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
@@ -33,7 +34,7 @@
                     <br />
                     @endforeach
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success btn-sm">Guardar</button>
                 {!! Form::close() !!}
             </div>
         </div>

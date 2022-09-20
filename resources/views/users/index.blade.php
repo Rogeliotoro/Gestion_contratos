@@ -7,21 +7,22 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
+        <h2>Usuarios</h2>
         <div class="card">
-            <div class="card-header"><h3><strong>Usuarios</strong></h3>
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-outline-primary btn-sm " href="{{ route('users.create') }}"> Crear Usuario</a>
+                    <a class="btn btn-primary btn-sm " href="{{ route('users.create') }}"> Crear Usuario</a>
                 </span>
             </div>
             <div class="card-body">
-                <table class="table table-striped">
+                <table class="table table-hover table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Roles</th>
-                            <th width="280px">Action</th>
+                            <th width="150px"></th>
                         </tr>
                     </thead>
                     <tbody>

@@ -12,19 +12,20 @@
             </ul>
         </div>
         @endif
+        <h2>Editar Permisos</h2>
         <div class="card">
-            <div class="card-header">Edit permission
+            <div class="card-header">
                 <span class="float-right">
-                    <a class="btn btn-primary" href="{{ route('permissions.index') }}">Permissions</a>
+                    <a class="btn btn-primary btn-sm" href="{{ route('permissions.index') }}">Atras</a>
                 </span>
             </div>
             <div class="card-body">
                 {!! Form::model($permission, ['route' => ['permissions.update', $permission->id], 'method'=>'PATCH']) !!}
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+                    <strong>Nombre:</strong>
+                    {!! Form::text('name', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success btn-sm">Guardar</button>
                 {!! Form::close() !!}
             </div>
         </div>
