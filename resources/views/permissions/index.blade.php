@@ -1,0 +1,52 @@
+@extends('layouts.app')
+@section('content')
+<div class="container-fluid">
+    <div class="justify-content-center">
+        @if (\Session::has('success'))
+        <div class="alert alert-success">
+            <p>{{ \Session::get('success') }}</p>
+        </div>
+        @endif
+        <div class="card">
+            <div class="card-header"><h3><strong>Permisos</strong></h3>
+                @can('role-create')
+                <span class="float-right">
+                    <a class="btn btn-outline-primary btn-sm" href="{{ route('permissions.create') }}">Crear Permisos</a>
+                </span>
+                @endcan
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th width="280px">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($data as $key => $permission)
+                        <tr>
+                            <td>{{ $permission->id }}</td>
+                            <td>{{ $permission->name }}</td>
+                            <td>
+                                <a class="btn btn-default" href="{{ route('permissions.show',$permission->id) }}"><i class=" fa-solid fa-eye " style="color: blue;"></i></a>
+                                @can('role-edit')
+                                <a class="btn btn-default" href="{{ route('permissions.edit',$permission->id) }}"><i class=" fa-solid fa-pen " style="color: blue;"></i></a>
+                                @endcan
+                                @can('role-delete')
+                                {!! Form::open(['method' => 'DELETE','route' => ['permissions.destroy', $permission->id],'style'=>'display:inline']) !!}
+                                {{ Form::button('<i class="fa-solid fa-trash" style="color: blue;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                {!! Form::close() !!}
+                                @endcan
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+                {{ $data->appends($_GET)->links() }}
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
