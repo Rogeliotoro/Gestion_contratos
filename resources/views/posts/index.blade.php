@@ -38,7 +38,7 @@
                                         <td>{{ $post->societies_id }}</td>
                                         <td>{{ $post->fecha_inicio }}</td>
                                         <td>{{ $post->firmante }}</td>
-                                        <td>{{ $post->importe }}</td>
+                                        <td>{{ $post->importe }}&nbsp;€</td>
                                         <td>{{ $post->estado }}</td>
                                        <td>
                                     

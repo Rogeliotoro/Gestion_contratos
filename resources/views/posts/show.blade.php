@@ -20,7 +20,7 @@
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Nuevo Fichero
+          Nuevo Fichero <i class="fa-solid fa-file-pdf"></i>
         </button>
 
         <!-- Modal -->
@@ -28,15 +28,22 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Fichero</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                <div>
+                <label class="control-label">Descripción</label>
+                <input type="text"  class="form-control"  maxlength="500" aria-required="true">
+                </div>
+                <div class="help-block"></div>
+                <div>
+                Anexo <input type="file" name="archivo" title="seleccionar fichero" id="importData" accept=".xls,.xlsx" />
+                </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
               </div>
             </div>
           </div>

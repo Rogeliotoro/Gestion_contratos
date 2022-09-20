@@ -32,9 +32,11 @@ class Post extends Model
         'fecha_fin',
     ];
     
+   
+
     public function society()
     {
-        return $this->belongsTo(Society::class, 'societies_id');
+        return $this->hasMany(Society::class, 'id' , 'societies_id');
     }
 
     public function file()

@@ -19,14 +19,11 @@ class Society extends Model
         'systemModifiedAt'
     ];
 
-    public function solicitud()
-    {
-        return $this->hasMany(Solicitud::class);
-    }
-
+  
     public function post()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(Society::class);
     }
+    
 
 }
