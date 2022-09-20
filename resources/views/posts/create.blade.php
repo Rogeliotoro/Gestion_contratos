@@ -118,7 +118,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="col">
                         <div class="card border border-3 mb-3">
