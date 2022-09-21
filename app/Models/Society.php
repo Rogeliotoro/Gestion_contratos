@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Society extends Model
 {
-    use HasFactory;
-    protected $fillable = [
+    
+    static $rules = [
         'idSociedad',
         'name',
         'displayName',
@@ -19,11 +19,22 @@ class Society extends Model
         'systemModifiedAt'
     ];
 
-  
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function post()
     {
-        return $this->belongsTo(Society::class);
+        return $this->hasMany(Post::class, 'societies_id', 'id');
     }
     
-
 }

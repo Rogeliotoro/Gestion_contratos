@@ -64,7 +64,7 @@
                       <tbody>
                         <tr>
                           <th>Sociedad</th>
-                          <td>{{ $post->societies_id }} </td>
+                          <td>{{ $post->society->name }} </td>
                         </tr>
                         <tr>
                           <th>Estado</th>

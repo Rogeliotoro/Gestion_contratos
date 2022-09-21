@@ -18,8 +18,9 @@ class File extends Model
         return $this->hasMany(Solicitud::class);
     }
 
+   
     public function post()
     {
-        return $this->hasMany(Post::class);
+        return $this->belongsTo(Post::class);
     }
 }

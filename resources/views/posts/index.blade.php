@@ -35,7 +35,7 @@
                                     @foreach ($data as $key => $post)
                                     <tr>
                                         <td>{{ $post->objeto }}</td>
-                                        <td>{{ $post->societies_id }}</td>
+                                        <td>{{ $post->society->name }}</td>
                                         <td>{{ $post->fecha_inicio }}</td>
                                         <td>{{ $post->firmante }}</td>
                                         <td>{{ $post->importe }}&nbsp;€</td>

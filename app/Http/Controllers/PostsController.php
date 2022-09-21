@@ -7,7 +7,7 @@ use App\Models\File;
 use App\Models\Post;
 use App\Models\Society;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 
 class PostsController extends Controller
 {
@@ -70,6 +70,7 @@ class PostsController extends Controller
             ]
         ));
 
+
         return redirect()->route('posts.index')
             ->withSuccess(__('Solicitud creada correctamente.'));
     }
@@ -83,8 +84,11 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        $society = Society::pluck('name', 'id')->all();
+        $file = File::pluck('name', 'id')->all();
+        $ceco = Ceco::pluck('name', 'id')->all();
 
-        return view('posts.show', compact('post'));
+        return view('posts.show', compact('post', 'society', 'file', 'ceco'));
     }
 
     /**
