@@ -12,15 +12,4 @@ class File extends Model
         'code',
         'name',
     ];
-
-    public function solicitud()
-    {
-        return $this->hasMany(Solicitud::class);
-    }
-
-   
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
-    }
 }

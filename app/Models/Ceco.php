@@ -13,10 +13,4 @@ class Ceco extends Model
         'name',
     ];
 
-   
-
-    public function post()
-    {
-        return $this->belongsTo(Post::class);
-    }
 }

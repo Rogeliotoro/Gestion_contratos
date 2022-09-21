@@ -34,10 +34,6 @@ class CreatePostsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('societies_id');
             $table->foreign('societies_id')->references('id')->on('societies')->onDelete('cascade');
-            $table->unsignedBigInteger('files_id');
-            $table->foreign('files_id')->references('id')->on('files')->onDelete('cascade');
-            $table->unsignedBigInteger('cecos_id');
-            $table->foreign('cecos_id')->references('id')->on('cecos')->onDelete('cascade');
         });
     }
 

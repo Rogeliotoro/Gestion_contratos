@@ -8,15 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     
-    static $rules = [
-		'user_id',
+    use HasFactory;
+
+    protected $table = 'posts';
+
+    protected $fillable = [
+        'user_id',
         'estado',
         'objeto',
         'condiciones',
         'observaciones',
         'societies_id',
-        'files_id',
-        'cecos_id',
+        'cod_files',
+        'cod_cecos',
         'cod_cliente',
         'tipo',
         'firmante',
@@ -28,15 +32,7 @@ class Post extends Model
         'fecha_inicio',
         'fecha_fin',
     ];
-
-    protected $perPage = 20;
-
-    /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['societies_id','name'];
+    
 
 
     /**
@@ -48,5 +44,9 @@ class Post extends Model
         return $this->hasOne(Society::class, 'id' , 'societies_id');
     }
     
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 
 }

@@ -80,13 +80,13 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <strong>Cód. Expediente:</strong>
-                                    {!! Form::select('files_id', $file, null, ['class' => 'form-select']) !!}
+                                    {!! Form::text('cod_files', null, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <strong>Cód. Cecos:</strong>
-                                    {!! Form::select('cecos_id', $ceco, null, ['class' => 'form-select']) !!}
+                                    {!! Form::text('cod_cecos', null, array('class' => 'form-control')) !!}
                                 </div>
                             </div>
                         </div>

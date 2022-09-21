@@ -31,10 +31,8 @@ class PostsController extends Controller
     public function create()
     {
         $society = Society::pluck('name', 'id')->all();
-        $file = File::pluck('name', 'id')->all();
-        $ceco = Ceco::pluck('name', 'id')->all();
 
-        return view('posts.create', compact('society', 'file', 'ceco'));
+        return view('posts.create', compact('society'));
     }
 
     /**
@@ -52,9 +50,9 @@ class PostsController extends Controller
                 'condiciones',
                 'observaciones',
                 'societies_id',
-                'files_id',
-                'cecos_id',
                 'cod_cliente',
+                'cod_cecos',
+                'cod_files',
                 'tipo',
                 'firmante',
                 'documentacion',
@@ -85,10 +83,8 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $society = Society::pluck('name', 'id')->all();
-        $file = File::pluck('name', 'id')->all();
-        $ceco = Ceco::pluck('name', 'id')->all();
 
-        return view('posts.show', compact('post', 'society', 'file', 'ceco'));
+        return view('posts.show', compact('post', 'society'));
     }
 
     /**
@@ -100,10 +96,8 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         $society = Society::pluck('name', 'id')->all();
-        $file = File::pluck('name', 'id')->all();
-        $ceco = Ceco::pluck('name', 'id')->all();
-
-        return view('posts.edit', compact('society', 'file', 'ceco'), [
+      
+        return view('posts.edit', compact('society'), [
             'post' => $post
         ]);
     }
@@ -124,9 +118,9 @@ class PostsController extends Controller
             'condiciones',
             'observaciones',
             'societies_id',
-            'files_id',
-            'cecos_id',
             'cod_cliente',
+            'cod_files',
+            'cod_cecos',
             'tipo',
             'firmante',
             'documentacion',
