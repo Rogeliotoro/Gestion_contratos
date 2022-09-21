@@ -68,14 +68,15 @@
                     <div class="col">
                         <div class="card border border-3 mb-3">
                             <div class="card-header">
-                                <h4><strong>Proyecto ERP - Gestión Económica Abbantia</strong></h4>
+                                <h4><strong>Proyecto </strong></h4>
                             </div>
                             <div class="card-body">
                                 <h6 class="card-subtitle mb-2 text-info">Utilizad los códigos de la sección de Maestros y Contratantes</h6>
                                 <div class="form-group">
                                     <strong>Cód. Cliente:</strong>
-                                    {!! Form::text('cod_cliente', null, array('placeholder' => 'Por ejemplo: C00013 para Televisión Española, S.A.' ,'class' => 'form-control')) !!}
+                                    {!! Form::text('cod_cliente', null, array('class' => 'form-control')) !!}
                                 </div>
+                                <div class="hint-block">Por ejemplo: C00013 para Televisión Española, S.A.</div>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">

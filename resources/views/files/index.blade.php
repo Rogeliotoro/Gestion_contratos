@@ -32,8 +32,10 @@
                                 </table>
                                 <div class="Page navigation example">
                                     {!! $data->links() !!}
-                                </div>       
+                                </div>
+                            
                         </div>
                     </div>
+
                 </div>
 @endsection
