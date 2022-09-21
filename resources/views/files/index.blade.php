@@ -13,10 +13,9 @@
                         <div class="card-header card-header-primary">
                             <h2 class="card-title ">Expedientes</h2>
                         </div>
-                        <div class="card-body">
-                            <div class="table table-hover table-bordered">
-                                <table class="table">
-                                    <thead class=" text-dark">
+                        <div class="card-body">               
+                                <table class="table table-hover table-bordered">
+                                    <thead class=" thead-dark">
                                         <th>ID</th>
                                         <th>Code</th>
                                         <th>Nombre</th>
@@ -33,10 +32,8 @@
                                 </table>
                                 <div class="Page navigation example">
                                     {!! $data->links() !!}
-                                </div>
-                            </div>
+                                </div>       
                         </div>
                     </div>
-
                 </div>
 @endsection

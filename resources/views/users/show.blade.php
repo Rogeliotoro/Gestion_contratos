@@ -32,8 +32,7 @@
                 <div class="lead">
                     <strong>Rol:</strong>
                     {{ $user->getRoleNames() }}
-                </div>
-                
+                </div>        
             </div>
         </div>
     </div>
