@@ -34,6 +34,12 @@
                                     {!! Form::select('estado', array('Pendiente' => 'Pendiente', 'Aprobado' => 'Aprobado' , 'Revision' => 'Revision', 'Rechazado' => 'Rechazado') , null, ['class' => 'form-select']) !!}
                                 </div>
                                 @endcan
+                                @can('soli-edit')
+                                <div class="form-group">
+                                    <strong>Estado:</strong>
+                                    {!! Form::select('estado', array('Pendiente' => 'Pendiente', 'Rechazado' => 'Rechazado') , null, ['class' => 'form-select']) !!}
+                                </div>
+                                @endcan
                             </div>
                             <div class="card-body">
                                 <div class="form-group">

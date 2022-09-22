@@ -52,7 +52,7 @@
                         </ul>
                     </li>
                     @endcan
-                    @can('post-list')
+                    @can('post-admin-juri')
                     <li><a class="nav-link" href="{{ route('posts.index') }}"><i class="fas fa-tasks"></i> Mis Tareas</a></li>
                     @endcan
                     @can('post-list')
