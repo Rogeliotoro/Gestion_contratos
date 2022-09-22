@@ -10692,7 +10692,7 @@ textarea.form-control-lg {
   --bs-btn-padding-x: 0.50rem;
   --bs-btn-padding-y: 0.275rem;
   --overflow: visible;
-
+  --bs-btn-border-width: 1px;
   --bs-btn-font-family: ;
   --bs-btn-font-size: 0.9rem;
   --bs-btn-font-weight: 400;

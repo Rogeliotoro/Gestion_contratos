@@ -4,6 +4,7 @@ use App\Http\Controllers\CecoController;
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
@@ -40,5 +41,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('cecos', CecoController::class);
     Route::resource('societies', SocietyController::class);
     Route::resource('posts', PostsController::class);
+    Route::resource('notes', NoteController::class);
 });
 

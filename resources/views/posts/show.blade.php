@@ -33,12 +33,12 @@
               </div>
               <div class="modal-body">
                 <div>
-                <label class="control-label">Descripción</label>
-                <input type="text"  class="form-control"  maxlength="500" aria-required="true">
+                  <label class="control-label">Descripción</label>
+                  <input type="text" class="form-control" maxlength="500" aria-required="true">
                 </div>
                 <div class="help-block"></div>
                 <div>
-                Anexo <input type="file" name="archivo" title="seleccionar fichero" id="importData" accept=".xls,.xlsx" />
+                  Anexo <input type="file" name="archivo" title="seleccionar fichero" id="importData" accept=".xls,.xlsx" />
                 </div>
               </div>
               <div class="modal-footer">
@@ -50,15 +50,31 @@
         </div>
 
         @endcan
-        
+
       </div>
+      <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ route('posts.show', $post->id) }}" role="tab" aria-controls="home" aria-selected="true">Detalle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ficheros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Notas e Histórico</a>
+          </li>
+        </ul>
+      </div>
+
       <div class="card-body">
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="row mt-2">
               <div class="col">
                 <div class="card border border-3 mb-3">
-                  <div class="card-header"><h4><strong>Sociedad</strong></h4></div>
+                  <div class="card-header">
+                    <h4><strong>Sociedad</strong></h4>
+                  </div>
                   <div class="card-body">
                     <table id="w0" class="table">
                       <tbody>
@@ -79,7 +95,9 @@
                   </div>
                 </div>
                 <div class="card border border-3 mb-3">
-                  <div class="card-header"><h4><strong>Solicitud</strong></h4></div>
+                  <div class="card-header">
+                    <h4><strong>Solicitud</strong></h4>
+                  </div>
                   <div class="card-body">
                     <table id="w1" class="table">
                       <tbody>
@@ -102,7 +120,9 @@
               </div>
               <div class="col">
                 <div class="card border border-3 mb-3">
-                  <div class="card-header"><h4><strong>Proyecto ERP - Gestión Económica Abbantia</strong></h4></div>
+                  <div class="card-header">
+                    <h4><strong>Proyecto ERP - Gestión Económica Abbantia</strong></h4>
+                  </div>
                   <div class="card-body">
                     <table id="w2" class="table">
                       <tbody>
@@ -123,7 +143,9 @@
                   </div>
                 </div>
                 <div class="card border border-3 mb-3">
-                  <div class="card-header"><h4><strong>Información de la contratación</strong></h4></div>
+                  <div class="card-header">
+                    <h4><strong>Información de la contratación</strong></h4>
+                  </div>
                   <div class="card-body">
                     <table id="w3" class="table">
                       <tbody>
@@ -150,7 +172,9 @@
               </div>
               <div class="col">
                 <div class="card border border-3 mb-3">
-                  <div class="card-header"><h4><strong>Contraprestación</strong></h4></div>
+                  <div class="card-header">
+                    <h4><strong>Contraprestación</strong></h4>
+                  </div>
                   <div class="card-body">
                     <table id="w4" class="table">
                       <tbody>
@@ -171,7 +195,9 @@
                   </div>
                 </div>
                 <div class="card border border-3 mb-3">
-                  <div class="card-header"><h4><strong>Duración del Contrato</strong></h4></div>
+                  <div class="card-header">
+                    <h4><strong>Duración del Contrato</strong></h4>
+                  </div>
                   <div class="card-body">
                     <table id="w5" class="table">
                       <tbody>
