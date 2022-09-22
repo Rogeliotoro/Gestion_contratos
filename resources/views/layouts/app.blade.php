@@ -41,13 +41,13 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             @can('user-list')
-                            <li><a class="nav-link" href="{{ route('users.index') }}">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="{{ route('users.index') }}">Usuarios</a></li>
                             @endcan
                             @can('role-list')
-                            <li><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
+                            <li><a class="dropdown-item" href="{{ route('roles.index') }}">Roles</a></li>
                             @endcan
                             @can('permission-list')
-                            <li><a class="nav-link" href="{{ route('permissions.index') }}">Permisos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('permissions.index') }}">Permisos</a></li>
                             @endcan
                         </ul>
                     </li>
@@ -67,10 +67,10 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             @can('clientes-list')
-                            <li><a class="nav-link" href="#">Clientes</a></li>
+                            <li><a class="dropdown-item" href="#">Clientes</a></li>
                             @endcan
                             @can('proveedores-list')
-                            <li><a class="nav-link" href="#">Proveedores</a></li>
+                            <li><a class="dropdown-item" href="#">Proveedores</a></li>
                             @endcan
 
                         </ul>
@@ -81,13 +81,13 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
                             @can('file-list')
-                            <li><a class="nav-link" href="{{ route('files.index') }}">Expedientes</a></li>
+                            <li><a class="dropdown-item" href="{{ route('files.index') }}">Expedientes</a></li>
                             @endcan
                             @can('ceco-list')
-                            <li><a class="nav-link" href="{{ route('cecos.index') }}">Cecos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('cecos.index') }}">Cecos</a></li>
                             @endcan
                             @can('society-list')
-                            <li><a class="nav-link" href="{{ route('societies.index') }}">Sociedades</a></li>
+                            <li><a class="dropdown-item" href="{{ route('societies.index') }}">Sociedades</a></li>
                             @endcan
                         </ul>
                     </li>
@@ -95,15 +95,17 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
                         </a>
-                        <div class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('users.index') }}">Perfil</a></li>
+                            <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                                    {{ __('Logout') }}
+                                </a>
+                            </li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
-                        </div>
+                        </ul>
                     </li>
                     @endguest
                 </ul>
@@ -114,4 +116,5 @@
         @yield('content')
     </main>
 </body>
+
 </html>

@@ -19,8 +19,8 @@ class Post extends Model
         'condiciones',
         'observaciones',
         'societies_id',
-        'cod_files',
-        'cod_cecos',
+        'files_id',
+        'cecos_id',
         'cod_cliente',
         'tipo',
         'firmante',
@@ -44,6 +44,18 @@ class Post extends Model
         return $this->hasOne(Society::class, 'id' , 'societies_id');
     }
     
+    public function file()
+    {
+    
+        return $this->hasOne(File::class, 'id' , 'files_id');
+    }
+
+    public function ceco()
+    {
+    
+        return $this->hasOne(Ceco::class, 'id' , 'cecos_id');
+    }
+
     public function users()
     {
         return $this->belongsToMany(User::class);

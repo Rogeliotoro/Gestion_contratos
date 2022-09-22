@@ -12,4 +12,9 @@ class File extends Model
         'code',
         'name',
     ];
+    
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'files_id', 'id');
+    }
 }

@@ -37,7 +37,7 @@
                                 @can('soli-edit')
                                 <div class="form-group">
                                     <strong>Estado:</strong>
-                                    {!! Form::select('estado', array('Pendiente' => 'Pendiente', 'Rechazado' => 'Rechazado') , null, ['class' => 'form-select']) !!}
+                                    {!! Form::select('estado', array( '-' => '-', 'Pendiente' => 'Pendiente') , null, ['class' => 'form-select']) !!}
                                 </div>
                                 @endcan
                             </div>
@@ -88,13 +88,13 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <strong>Cód. Expediente:</strong>
-                                    {!! Form::text('cod_files', null, array('class' => 'form-control')) !!}
+                                    {!! Form::select('files_id', $file, null, ['class' => 'form-select']) !!}
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <strong>Cód. Cecos:</strong>
-                                    {!! Form::text('cod_cecos', null, array('class' => 'form-control')) !!}
+                                    {!! Form::select('cecos_id', $ceco, null, ['class' => 'form-select']) !!}
                                 </div>
                             </div>
                         </div>

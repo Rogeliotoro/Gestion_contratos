@@ -19,10 +19,12 @@ class UserController extends Controller
      */
     function __construct()
     {
-         $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:user-list|user-create|user-edit|user-delete|user-profile', ['only' => ['index','store']]);
          $this->middleware('permission:user-create', ['only' => ['create','store']]);
          $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
          $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+         $this->middleware('auth', ['except' => [ 'profile']]);
+         $this->middleware('permission:user-profile', ['only' => ['profile']]);
     }
 
     /**
@@ -30,12 +32,21 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index(Request $request)
     {
         $data = User::orderBy('id', 'desc')->paginate(5);
         
         return view('users.index', compact('data'));
     }
+
+
+    public function profile($id)
+    {
+        $user = User::find($id);
+        return view('user.profile', compact('user') );
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -88,6 +99,7 @@ class UserController extends Controller
 
         return view('users.show', compact('user'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

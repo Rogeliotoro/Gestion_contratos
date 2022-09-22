@@ -13,4 +13,9 @@ class Ceco extends Model
         'name',
     ];
 
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'cecos_id', 'id');
+    }
+
 }

@@ -112,11 +112,11 @@
                         </tr>
                         <tr>
                           <th>Cód. Expediente</th>
-                          <td><span class="not-set"> {{ $post->files_id }}</span></td>
+                          <td><span class="not-set"> {{ $post->file->code }}</span></td>
                         </tr>
                         <tr>
                           <th>Cód. Ceco</th>
-                          <td> {{ $post->cecos_id }}</td>
+                          <td> {{ $post->ceco->code }}</td>
                         </tr>
                       </tbody>
                     </table>

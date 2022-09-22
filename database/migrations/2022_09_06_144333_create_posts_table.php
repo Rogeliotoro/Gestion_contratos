@@ -32,7 +32,10 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('societies_id');
+            $table->unsignedBigInteger('files_id');
+            $table->foreign('files_id')->references('id')->on('files')->onDelete('cascade');
+            $table->unsignedBigInteger('cecos_id');
+            $table->foreign('cecos_id')->references('id')->on('cecos')->onDelete('cascade');
             $table->foreign('societies_id')->references('id')->on('societies')->onDelete('cascade');
         });
     }

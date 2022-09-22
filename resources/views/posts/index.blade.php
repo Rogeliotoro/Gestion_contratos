@@ -39,30 +39,35 @@
                                         <td>{{ $post->fecha_inicio }}</td>
                                         <td>{{ $post->firmante }}</td>
                                         <td>{{ $post->importe }}&nbsp;€</td>
-                                        <td>{{ $post->estado }}</td>
-                                       <td>
-                                    
+                                        <td>
+                                            @if($post->estado == 'Rechazado')
+                                            <span style="color:red;"><strong>{{$post->estado}}</strong></span>
+                                            @else
+                                            <span style="color:blue;"><strong>{{$post->estado}}</strong></span>
+                                            @endif
+                                        </td>
+                                        <td>
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
-                                                <i class=" fa-solid fa-eye " style="color: blue;"></i>
+                                                <i class=" fa-solid fa-eye " style="color: #5054b1;"></i>
                                                 <div class="ripple-container"></div>
                                             </a>
-                                       
-                                        @can('post-edit')
-                                        
+
+                                            @can('post-edit')
+
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
-                                                <i class=" fa-solid fa-pen " style="color: blue;"></i>
+                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
                                                 <div class="ripple-container"></div>
                                             </a>
-                                       
-                                        @endcan
-                                        @can('post-delete')
-                                    
+
+                                            @endcan
+                                            @can('post-delete')
+
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
-                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: blue;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: #b1505c;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                             {!! Form::close() !!}
-                                     
-                                        @endcan
-                                       </td>
+
+                                            @endcan
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>

@@ -32,8 +32,10 @@ class PostsController extends Controller
     public function create()
     {
         $society = Society::pluck('name', 'id')->all();
+        $file = File::pluck('code', 'id')->all();
+        $ceco = Ceco::pluck('code', 'id')->all();
 
-        return view('posts.create', compact('society'));
+        return view('posts.create', compact('society', 'society','file','ceco'));
     }
 
     /**
@@ -51,9 +53,9 @@ class PostsController extends Controller
                 'condiciones',
                 'observaciones',
                 'societies_id',
+                'files_id',
+                'cecos_id',
                 'cod_cliente',
-                'cod_cecos',
-                'cod_files',
                 'tipo',
                 'firmante',
                 'documentacion',
@@ -84,8 +86,10 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $society = Society::pluck('name', 'id')->all();
+        $file = File::pluck('code', 'id')->all();
+        $ceco = Ceco::pluck('code', 'id')->all();
 
-        return view('posts.show', compact('post', 'society'));
+        return view('posts.show', compact('post', 'society','file','ceco'));
     }
 
     /**
@@ -97,8 +101,10 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         $society = Society::pluck('name', 'id')->all();
+        $file = File::pluck('code', 'id')->all();
+        $ceco = Ceco::pluck('code', 'id')->all();
       
-        return view('posts.edit', compact('society'), [
+        return view('posts.edit', compact('society','file','ceco'), [
             'post' => $post
         ]);
     }
@@ -119,9 +125,9 @@ class PostsController extends Controller
             'condiciones',
             'observaciones',
             'societies_id',
+            'files_id',
+            'cecos_id',
             'cod_cliente',
-            'cod_files',
-            'cod_cecos',
             'tipo',
             'firmante',
             'documentacion',
@@ -134,7 +140,7 @@ class PostsController extends Controller
         ));
 
         return redirect()->route('posts.index')
-            ->withSuccess(__('Post updated successfully.'));
+            ->withSuccess(__('Solicitud editada correctamente.'));
     }
 
     /**
@@ -148,6 +154,6 @@ class PostsController extends Controller
         $post->delete();
 
         return redirect()->route('posts.index')
-            ->withSuccess(__('Post deleted successfully.'));
+            ->withSuccess(__('Solicitud borrada correctamente.'));
     }
 }
