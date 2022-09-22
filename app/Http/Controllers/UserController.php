@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Society;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -45,8 +45,9 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
+        $society = Society::pluck('name', 'id')->all();
 
-        return view('users.create', compact('roles'));
+        return view('users.create', compact('roles','society'));
     }
 
     /**
@@ -61,7 +62,8 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed',
-            'roles' => 'required'
+            'roles' => 'required',
+            'societies_id' => 'required'
         ]);
     
         $input = $request->all();

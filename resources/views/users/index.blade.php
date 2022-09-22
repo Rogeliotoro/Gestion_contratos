@@ -22,6 +22,7 @@
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Roles</th>
+                            <th>Sociedades</th>
                             <th width="150px"></th>
                         </tr>
                     </thead>
@@ -38,6 +39,7 @@
                                 @endforeach
                                 @endif
                             </td>
+                            <td>{{ $user->societies_id }}</td>
                             <td>
                                 <a class="btn btn-default" href="{{ route('users.show',$user->id) }}"><i class=" fa-solid fa-eye " style="color: blue;"></i></a>
                                 @can('user-edit')

@@ -34,7 +34,7 @@
                     <br />
                     @endforeach
                 </div>
-                <button type="submit" class="btn btn-success btn-sm">Guardar</button>
+                <button type="submit" class="btn btn-success btn-sm mt-2">Guardar</button>
                 {!! Form::close() !!}
             </div>
         </div>
