@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Post::class);
     }
+
+    public function society()
+    {
+    
+        return $this->hasOne(Society::class, 'id' , 'societies_id');
+    }
 }

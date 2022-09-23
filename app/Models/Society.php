@@ -36,5 +36,10 @@ class Society extends Model
     {
         return $this->hasMany(Post::class, 'societies_id', 'id');
     }
+
+    public function user()
+    {
+        return $this->hasMany(User::class, 'societies_id', 'id');
+    }
     
 }

@@ -59,6 +59,16 @@
                                             </a>
 
                                             @endcan
+                                            @can('soli-edit')
+                                            @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
+                                            
+                                            <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
+                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                            </a>
+                                            @else
+                                            @endif
+                                            @endcan
+
                                             @can('post-delete')
 
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
