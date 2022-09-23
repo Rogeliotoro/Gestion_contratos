@@ -36,7 +36,8 @@
                                     <tr>
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
-                                        <td>{{ $post->fecha_inicio }}</td>
+                                        <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
+                                        
                                         <td>{{ $post->firmante }}</td>
                                         <td>{{ $post->importe }}&nbsp;€</td>
                                         <td>
@@ -49,14 +50,12 @@
                                         <td>
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-eye " style="color: #5054b1;"></i>
-                                                <div class="ripple-container"></div>
                                             </a>
 
                                             @can('post-edit')
 
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
-                                                <div class="ripple-container"></div>
                                             </a>
 
                                             @endcan

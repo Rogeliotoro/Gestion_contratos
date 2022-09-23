@@ -20,15 +20,15 @@
         {!! Form::close() !!}
         @endcan
         <span class="float-right">
-          <a class="btn btn-outline-primary btn-sm"  href="{{ route('notes.create') }}"> Nueva Nota <i class="fa-solid fa-file"></i></a>
+          <a class="btn btn-outline-primary btn-sm" href="{{ route('notes.create') }}"> Nueva Nota <i class="fa-solid fa-file"></i></a>
         </span>
 
         <!-- //////////////////////////////////////// -->
-        
+
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Nueva Nota <i class="fa-solid fa-file"></i>
         </button>
-        
+
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -37,15 +37,21 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div>
-                  <label class="control-label">Contenido</label>
-                  <textarea class="form-control" rows="3"></textarea>
+                {!! Form::open(array('route' => 'notes.store','method'=>'POST')) !!}
+                <div class="form-group">
+                  <strong>Contenido:</strong>
+                  {!! Form::textarea('nota', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
+                </div>
+                <div class="form-group">
+                  <strong>Solicitudes:</strong>
+                  {!! Form::select('posts_id', $post, null, ['class' => 'form-select']) !!}
                 </div>
                 <div class="help-block"></div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                {!! Form::close() !!}
               </div>
             </div>
           </div>
@@ -88,7 +94,7 @@
                         </tr>
                         <tr>
                           <th>Fecha</th>
-                          <td> {{ $post->created_at }}</td>
+                          <td> {{date('d-m-Y',strtotime($post->created_at))}}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -203,11 +209,11 @@
                       <tbody>
                         <tr>
                           <th>Fecha Inicio</th>
-                          <td> {{ $post->fecha_inicio }}</td>
+                          <td> {{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
                         </tr>
                         <tr>
                           <th>Fecha Fin</th>
-                          <td><span class="not-set"> {{ $post->fecha_fin }}</span></td>
+                          <td><span class="not-set">{{date('d-m-Y',strtotime($post->fecha_fin))}}</span></td>
                         </tr>
                       </tbody>
                     </table>

@@ -12,6 +12,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SocietyController;
 use App\Http\Controllers\SolicitudController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
