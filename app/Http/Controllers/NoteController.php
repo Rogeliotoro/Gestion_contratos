@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -26,7 +27,9 @@ class NoteController extends Controller
      */
     public function create()
     {
-        return view('notes.create');
+        $post = Post::pluck('objeto', 'id')->all();
+
+        return view('notes.create', compact('post'));
     }
 
     /**

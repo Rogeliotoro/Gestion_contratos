@@ -14,32 +14,34 @@
         <span class="float-right">
           <a class="btn btn-success btn-sm" href="{{ route('posts.edit', $post->id) }}">Editar</a>
         </span>
+        @can('post-delete')
+        {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
+        {{ Form::button('<a>Eliminar</a>', ['class' => 'btn btn-danger btn-sm', 'type' => 'submit']) }}
+        {!! Form::close() !!}
+        @endcan
         <span class="float-right">
-          <a class="btn btn-danger btn-sm" href="{{ route('posts.destroy', $post->id) }}">Eliminar</a>
+          <a class="btn btn-outline-primary btn-sm"  href="{{ route('notes.create') }}"> Nueva Nota <i class="fa-solid fa-file"></i></a>
         </span>
 
         <!-- //////////////////////////////////////// -->
-
+        
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Nuevo Fichero <i class="fa-solid fa-file-pdf"></i>
+          Nueva Nota <i class="fa-solid fa-file"></i>
         </button>
-
+        
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nuevo Fichero</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nueva Nota</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <div>
-                  <label class="control-label">Descripción</label>
-                  <input type="text" class="form-control" maxlength="500" aria-required="true">
+                  <label class="control-label">Contenido</label>
+                  <textarea class="form-control" rows="3"></textarea>
                 </div>
                 <div class="help-block"></div>
-                <div>
-                  Anexo <input type="file" name="archivo" title="seleccionar fichero" id="importData" accept=".xls,.xlsx" />
-                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -57,11 +59,9 @@
           <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="{{ route('posts.show', $post->id) }}" role="tab" aria-controls="home" aria-selected="true">Detalle</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ficheros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Notas e Histórico</a>
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="{{ route('notes.index') }}" role="tab" aria-controls="contact" aria-selected="false">Notas e Histórico</a>
           </li>
         </ul>
       </div>
