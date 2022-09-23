@@ -31,13 +31,13 @@
                             <td>{{ $permission->id }}</td>
                             <td>{{ $permission->name }}</td>
                             <td>
-                                <a class="btn btn-default" href="{{ route('permissions.show',$permission->id) }}"><i class=" fa-solid fa-eye " style="color: blue;"></i></a>
+                                <a class="btn btn-default" href="{{ route('permissions.show',$permission->id) }}"><i class=" fa-solid fa-eye " style="color: #5054b1;"></i></a>
                                 @can('role-edit')
-                                <a class="btn btn-default" href="{{ route('permissions.edit',$permission->id) }}"><i class=" fa-solid fa-pen " style="color: blue;"></i></a>
+                                <a class="btn btn-default" href="{{ route('permissions.edit',$permission->id) }}"><i class=" fa-solid fa-pen " style="color: #50b174;"></i></a>
                                 @endcan
                                 @can('role-delete')
                                 {!! Form::open(['method' => 'DELETE','route' => ['permissions.destroy', $permission->id],'style'=>'display:inline']) !!}
-                                {{ Form::button('<i class="fa-solid fa-trash" style="color: blue;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                {{ Form::button('<i class="fa-solid fa-trash" style="color: #b1505c;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                 {!! Form::close() !!}
                                 @endcan
                             </td>
