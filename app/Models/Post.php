@@ -33,8 +33,6 @@ class Post extends Model
         'fecha_fin',
     ];
     
-
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -60,7 +58,5 @@ class Post extends Model
     {
         return $this->hasOne(User::class,'id', 'user_id');
     }
-
-
 
 }

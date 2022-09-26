@@ -48,8 +48,6 @@
                                 </thead>
                                 @endcan
 
-
-
                                 <tbody>
                                     @can('soli-soli')
                                     @foreach ($data as $key => $post)

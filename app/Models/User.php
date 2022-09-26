@@ -43,18 +43,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-    
-
-    public function society()
-    {
-
-        return $this->hasOne(Society::class, 'id', 'societies_id');
-    }
+  
 
     public function post()
     {
         return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+
+    
+    public function society()
+    {
+    
+        return $this->hasOne(Society::class, 'id' , 'societies_id');
     }
 }
 
