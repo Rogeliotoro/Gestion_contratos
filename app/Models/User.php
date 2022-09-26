@@ -56,4 +56,6 @@ class User extends Authenticatable
     
         return $this->hasOne(Society::class, 'id' , 'societies_id');
     }
+
+    
 }

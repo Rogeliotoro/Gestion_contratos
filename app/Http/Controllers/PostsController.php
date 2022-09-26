@@ -22,9 +22,10 @@ class PostsController extends Controller
 
     public function index()
     {
+
         $admin = Post::latest()->paginate(10);
         $data = Post::where('user_id', auth()->user()->id)->paginate(10);
-
+        
         return view('posts.index', compact('data','admin'));
     }
 
@@ -49,6 +50,7 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    
     public function store(Request $request)
     {
         Post::create(array_merge(

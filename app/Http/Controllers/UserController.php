@@ -35,7 +35,7 @@ class UserController extends Controller
     
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'desc')->paginate(5);
+        $data = User::orderBy('id', 'desc')->paginate(10);
         
         return view('users.index', compact('data'));
     }
@@ -57,6 +57,7 @@ class UserController extends Controller
     {
         $roles = Role::pluck('name','name')->all();
         $society = Society::pluck('name', 'id')->all();
+     
 
         return view('users.create', compact('roles','society'));
     }
@@ -96,7 +97,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-
+        
         return view('users.show', compact('user'));
     }
 

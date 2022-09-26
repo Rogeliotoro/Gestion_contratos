@@ -44,7 +44,7 @@
                                     <th>Firmante</th>
                                     <th>Importe</th>
                                     <th>Estado</th>
-                                    <th width="150px"></th>
+                                    <th width="140px"></th>
                                 </thead>
                                 @endcan
 
