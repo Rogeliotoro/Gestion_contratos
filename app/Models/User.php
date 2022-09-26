@@ -44,18 +44,17 @@ class User extends Authenticatable
     ];
 
 
-  
-
-    public function post()
-    {
-        return $this->belongsToMany(Post::class);
-    }
+    
 
     public function society()
     {
-    
-        return $this->hasOne(Society::class, 'id' , 'societies_id');
+
+        return $this->hasOne(Society::class, 'id', 'societies_id');
     }
 
-    
+    public function post()
+    {
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
 }
+

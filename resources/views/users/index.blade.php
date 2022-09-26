@@ -43,11 +43,11 @@
                             <td>
                                 <a class="btn btn-default" href="{{ route('users.show',$user->id) }}"><i class=" fa-solid fa-eye " style="color: #5054b1;"></i></a>
                                 @can('user-edit')
-                                <a class="btn btn-default" href="{{ route('users.edit',$user->id) }}"><i class=" fa-solid fa-pen " style="color: #50b174;"></i></a>
+                                <a class="btn btn-default" href="{{ route('users.edit',$user->id) }}"><i class=" fa-solid fa-pen " style="color: #5054b1;"></i></a>
                                 @endcan
                                 @can('user-delete')
                                 {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                                {{ Form::button('<i class="fa-solid fa-trash" style="color: #b1505c;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                {{ Form::button('<i class="fa-solid fa-trash" style="color: #5054b1;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                 {!! Form::close() !!}
                                 @endcan
                             </td>

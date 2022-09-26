@@ -25,6 +25,7 @@ class PostsController extends Controller
 
         $admin = Post::latest()->paginate(10);
         $data = Post::where('user_id', auth()->user()->id)->paginate(10);
+
         
         return view('posts.index', compact('data','admin'));
     }

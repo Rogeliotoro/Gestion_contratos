@@ -56,9 +56,11 @@ class Post extends Model
         return $this->hasOne(Ceco::class, 'id' , 'cecos_id');
     }
 
-    public function users()
+    public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasOne(User::class,'id', 'user_id');
     }
+
+
 
 }

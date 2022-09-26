@@ -63,8 +63,12 @@
                                         <td>
                                             @if($post->estado == 'Rechazado')
                                             <span style="color:red;"><strong>{{$post->estado}}</strong></span>
-                                            @else
+                                            @elseif($post->estado == 'Pendiente')
                                             <span style="color:blue;"><strong>{{$post->estado}}</strong></span>
+                                            @elseif($post->estado == 'Aprobado')
+                                            <span style="color:green;"><strong>{{$post->estado}}</strong></span>
+                                            @elseif($post->estado == 'Revision')
+                                            <span style="color:#ffc107 ;"><strong>{{$post->estado}}</strong></span>
                                             @endif
                                         </td>
                                         <td>
@@ -75,7 +79,7 @@
                                             @can('post-edit')
 
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
-                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                                <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
 
                                             @endcan
@@ -83,7 +87,7 @@
                                             @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
 
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
-                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                                <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
                                             @else
                                             @endif
@@ -92,7 +96,7 @@
                                             @can('post-delete')
 
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
-                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: #b1505c;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: #5054b1;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                             {!! Form::close() !!}
 
                                             @endcan
@@ -104,7 +108,8 @@
                                     @can('admin-soli')
                                     @foreach ($admin as $key => $post)
                                     <tr>
-                                        <td>{{ $post->user_id }}</td>
+                                        <td><span style="color: #4330ad;"><strong>{{ $post->user->name}}</strong></span></td>
+                                        
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
@@ -130,7 +135,7 @@
                                             @can('post-edit')
 
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
-                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                                <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
 
                                             @endcan
@@ -138,7 +143,7 @@
                                             @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
 
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
-                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                                <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
                                             @else
                                             @endif
@@ -147,7 +152,7 @@
                                             @can('post-delete')
 
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
-                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: #b1505c;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: #5054b1;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                             {!! Form::close() !!}
 
                                             @endcan
