@@ -114,8 +114,12 @@
                                         <td>
                                             @if($post->estado == 'Rechazado')
                                             <span style="color:red;"><strong>{{$post->estado}}</strong></span>
-                                            @else
+                                            @elseif($post->estado == 'Pendiente')
                                             <span style="color:blue;"><strong>{{$post->estado}}</strong></span>
+                                            @elseif($post->estado == 'Aprobado')
+                                            <span style="color:green;"><strong>{{$post->estado}}</strong></span>
+                                            @elseif($post->estado == 'Revision')
+                                            <span style="color:#ffc107 ;"><strong>{{$post->estado}}</strong></span>
                                             @endif
                                         </td>
                                         <td>
