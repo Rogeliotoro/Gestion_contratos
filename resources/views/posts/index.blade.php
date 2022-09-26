@@ -55,7 +55,6 @@
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
-
                                         <td>{{ $post->firmante }}</td>
                                         <td>{{ $post->importe }}&nbsp;€</td>
                                         <td>
@@ -111,7 +110,6 @@
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
-
                                         <td>{{ $post->firmante }}</td>
                                         <td>{{ $post->importe }}&nbsp;€</td>
                                         <td>

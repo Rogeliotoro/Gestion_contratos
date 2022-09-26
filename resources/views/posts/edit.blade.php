@@ -72,7 +72,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col">
                         <div class="card border border-3 mb-3">
                             <div class="card-header">
@@ -127,7 +126,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="col">
                         <div class="card border border-3 mb-3">
