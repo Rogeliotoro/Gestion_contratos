@@ -7,7 +7,7 @@
       <p>{{ \Session::get('success') }}</p>
     </div>
     @endif
-    <h2>{{ $post->objeto }}</h2>
+    <h1>{{ $post->objeto }}</h1>
     <div class="card">
       <div class="card-header">
         @can('role-create')

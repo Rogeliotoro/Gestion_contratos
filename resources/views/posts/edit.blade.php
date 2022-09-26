@@ -12,7 +12,7 @@
             </ul>
         </div>
         @endif
-        <h2>Editar Solicitud : {{ $post->id }}</h2>
+        <h1>Editar Solicitud : {{ $post->id }}</h1>
         <div class="card">
             <div class="card-header">
                 <span class="float-right">

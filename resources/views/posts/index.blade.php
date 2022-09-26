@@ -22,6 +22,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered">
+                                @can('soli-soli')
                                 <thead class=" text-dark">
                                     <th>Objeto</th>
                                     <th>Sociedad</th>
@@ -31,13 +32,32 @@
                                     <th>Estado</th>
                                     <th width="150px"></th>
                                 </thead>
+                                @endcan
+
+
+                                @can('admin-soli')
+                                <thead class=" text-dark">
+                                    <th>Solicitante</th>
+                                    <th>Objeto</th>
+                                    <th>Sociedad</th>
+                                    <th>Fecha de Inicio</th>
+                                    <th>Firmante</th>
+                                    <th>Importe</th>
+                                    <th>Estado</th>
+                                    <th width="150px"></th>
+                                </thead>
+                                @endcan
+
+
+
                                 <tbody>
+                                    @can('soli-soli')
                                     @foreach ($data as $key => $post)
                                     <tr>
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
-                                        
+
                                         <td>{{ $post->firmante }}</td>
                                         <td>{{ $post->importe }}&nbsp;€</td>
                                         <td>
@@ -61,7 +81,7 @@
                                             @endcan
                                             @can('soli-edit')
                                             @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
-                                            
+
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
                                             </a>
@@ -79,6 +99,58 @@
                                         </td>
                                     </tr>
                                     @endforeach
+                                    @endcan
+
+                                    @can('admin-soli')
+                                    @foreach ($admin as $key => $post)
+                                    <tr>
+                                        <td>{{ $post->user_id }}</td>
+                                        <td>{{ $post->objeto }}</td>
+                                        <td>{{ $post->society->name }}</td>
+                                        <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
+
+                                        <td>{{ $post->firmante }}</td>
+                                        <td>{{ $post->importe }}&nbsp;€</td>
+                                        <td>
+                                            @if($post->estado == 'Rechazado')
+                                            <span style="color:red;"><strong>{{$post->estado}}</strong></span>
+                                            @else
+                                            <span style="color:blue;"><strong>{{$post->estado}}</strong></span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a rel="tooltip" class="btn btn-default" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
+                                                <i class=" fa-solid fa-eye " style="color: #5054b1;"></i>
+                                            </a>
+
+                                            @can('post-edit')
+
+                                            <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
+                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                            </a>
+
+                                            @endcan
+                                            @can('soli-edit')
+                                            @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
+
+                                            <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
+                                                <i class=" fa-solid fa-pen " style="color: #50b174;"></i>
+                                            </a>
+                                            @else
+                                            @endif
+                                            @endcan
+
+                                            @can('post-delete')
+
+                                            {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
+                                            {{ Form::button('<i class="fa-solid fa-trash" style="color: #b1505c;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
+                                            {!! Form::close() !!}
+
+                                            @endcan
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @endcan
                                 </tbody>
                             </table>
                             {{ $data->appends($_GET)->links() }}
