@@ -157,7 +157,8 @@
                                     @endcan
                                 </tbody>
                             </table>
-                            {{ $data->appends($_GET)->links() }}
+                            
+                            {!! $admin->links() !!}
                         </div>
                     </div>
                 </div>

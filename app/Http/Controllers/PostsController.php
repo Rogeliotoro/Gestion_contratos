@@ -23,10 +23,17 @@ class PostsController extends Controller
     public function index()
     {
 
-        $admin = Post::latest()->paginate(10);
+        $admin = Post::latest()->paginate(5);
         $data = Post::where('user_id', auth()->user()->id)->paginate(10);
        
         return view('posts.index', compact('data','admin'));
+    }
+
+    public function render()
+    {
+        return view('livewire.show-posts', [
+            'posts' => Post::paginate(5),
+        ]);
     }
 
 

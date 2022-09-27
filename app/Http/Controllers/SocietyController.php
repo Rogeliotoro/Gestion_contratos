@@ -29,6 +29,7 @@ class SocietyController extends Controller
         $data = Society::paginate(20);
 
         return view('societies.index',compact('data'));
+        
     }
 
 

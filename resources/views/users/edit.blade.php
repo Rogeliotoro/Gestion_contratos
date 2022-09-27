@@ -42,6 +42,10 @@
                     <strong>Rol:</strong>
                     {!! Form::select('roles[]', $roles, $userRole, array('class' => 'form-control','multiple')) !!}
                 </div>
+                <div class="form-group">
+                    <strong>Sociedades:</strong>
+                    {!! Form::select('societies_id', $society, null, ['class' => 'form-control','multiple']) !!}
+                </div>
                 <button type="submit" class="btn btn-success btn-sm">Guardar</button>
                 {!! Form::close() !!}
             </div>
