@@ -28,13 +28,6 @@ class PostsController extends Controller
         return view('posts.index', compact('data','admin'));
     }
 
-    public function render()
-    {
-        return view('livewire.show-posts', [
-            'posts' => Post::paginate(5),
-        ]);
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -46,6 +39,7 @@ class PostsController extends Controller
         $society = Society::pluck('name', 'id')->all();
         $file = File::pluck('code', 'id')->all();
         $ceco = Ceco::pluck('code', 'id')->all();
+        
 
         return view('posts.create', compact('society', 'society', 'file', 'ceco'));
     }
@@ -65,7 +59,6 @@ class PostsController extends Controller
                 'objeto',
                 'condiciones',
                 'observaciones',
-                'societies_id',
                 'files_id',
                 'cecos_id',
                 'cod_cliente',
@@ -80,7 +73,8 @@ class PostsController extends Controller
                 'fecha_fin',
             ),
             [
-                'user_id' => auth()->id()
+                'user_id' => auth()->id(),
+                'societies_id' => auth()->id()
             ]
         ));
 

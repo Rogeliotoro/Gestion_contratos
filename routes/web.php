@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CecoController;
+use App\Http\Controllers\ContractController;
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -43,5 +44,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('societies', SocietyController::class);
     Route::resource('posts', PostsController::class);
     Route::resource('notes', NoteController::class);
+    Route::resource('contracts', ContractController::class);
 });
 
