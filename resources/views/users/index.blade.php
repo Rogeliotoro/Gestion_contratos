@@ -8,6 +8,7 @@
         </div>
         @endif
         <h2>Usuarios</h2>
+        
         <div class="card">
             <div class="card-header">
                 <span class="float-right">

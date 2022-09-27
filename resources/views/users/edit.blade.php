@@ -19,7 +19,6 @@
                     <a class="btn btn-primary btn-sm" href="{{ route('users.index') }}">Atras</a>
                 </span>
             </div>
-
             <div class="card-body">
                 {!! Form::model($user, ['route' => ['users.update', $user->id], 'method'=>'PATCH']) !!}
                 <div class="form-group">

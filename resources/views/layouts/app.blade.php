@@ -55,13 +55,13 @@
                     </li>
                     @endcan
                     @can('post-admin-juri')
-                    <li><a class="nav-link" href="{{ route('posts.index') }}"><i class="fas fa-tasks"></i> Mis Tareas</a></li>
+                    <li><a class="nav-link" href="#"><i class="fas fa-tasks"></i> Mis Tareas</a></li>
                     @endcan
                     @can('post-list')
                     <li><a class="nav-link" href="{{ route('posts.index') }}"> <i class="fa-regular fa-calendar"></i> Solicitudes</a></li>
                     @endcan
                     @can('post-list')
-                    <li><a class="nav-link" href="{{ route('posts.index') }}"> <i class="far fa-handshake"></i> Contratos</a></li>
+                    <li><a class="nav-link" href="#"> <i class="far fa-handshake"></i> Contratos</a></li>
                     @endcan
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

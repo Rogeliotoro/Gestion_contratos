@@ -14,8 +14,7 @@ class CecoController extends Controller
      */
     function __construct()
     {
-         $this->middleware('permission:ceco-list', ['only' => ['index', 'show']]);
-
+        $this->middleware('permission:ceco-list', ['only' => ['index', 'show']]);
     }
 
     /**
@@ -27,7 +26,7 @@ class CecoController extends Controller
     {
         $data = Ceco::paginate(20);
 
-        return view('cecos.index',compact('data'));
+        return view('cecos.index', compact('data'));
     }
 
 
@@ -37,6 +36,4 @@ class CecoController extends Controller
 
         return view('cecos.show', compact('ceco'));
     }
-
 }
-

@@ -7,6 +7,7 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
+        
         <div class="card">
             <div class="card-header">
                 <h2>Cecos</h2>
