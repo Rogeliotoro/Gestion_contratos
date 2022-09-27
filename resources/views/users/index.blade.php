@@ -17,12 +17,13 @@
             </div>
             <div class="card-body">
                 <table class="table table-hover table-bordered table-sm">
-                    <thead class="thead-dark">
+                    <thead class="table-secondary">
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
                             <th>Email</th>
                             <th>Roles</th>
+                            <th>Sociedad</th>
                             <th width="150px"></th>
                         </tr>
                     </thead>
@@ -39,6 +40,7 @@
                                 @endforeach
                                 @endif
                             </td>
+                            <td>{{ $user->society->name}}</td>
                             <td>
                                 <a class="btn btn-default" href="{{ route('users.show',$user->id) }}"><i class=" fa-solid fa-eye " style="color: #5054b1;"></i></a>
                                 @can('user-edit')

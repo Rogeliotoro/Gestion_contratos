@@ -35,7 +35,7 @@
                 </div>
                 <div class="lead">
                     <strong>Sociedad:</strong>
-                    {{ $user->societies_id}}
+                    {{ $user->society->name}}
                 </div>         
             </div>
         </div>
