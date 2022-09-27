@@ -21,12 +21,12 @@
                     @endcan
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered">
+                            <table class="table table-hover table-bordered table-sm">
                                 @can('soli-soli')
-                                <thead class=" text-dark">
+                                <thead class="table-secondary">
                                     <th>Objeto</th>
                                     <th>Sociedad</th>
-                                    <th>Fecha de Inicio</th>
+                                    <th >Fecha de Inicio</th>
                                     <th>Firmante</th>
                                     <th>Importe</th>
                                     <th>Estado</th>
@@ -36,7 +36,7 @@
 
 
                                 @can('admin-soli')
-                                <thead class=" text-dark">
+                                <thead class="table-secondary">
                                     <th>Solicitante</th>
                                     <th>Objeto</th>
                                     <th>Sociedad</th>
@@ -105,8 +105,7 @@
                                     @can('admin-soli')
                                     @foreach ($admin as $key => $post)
                                     <tr>
-                                        <td><span style="color: #4330ad;"><strong>{{ $post->user->name}}</strong></span></td>
-                                        
+                                        <td><a class="btn btn-default btn-sm" style="color: #4330ad;"  href="{{ route('users.show',$post->user->id) }}"><strong>{{ $post->user->name}}</strong></a></td>
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>

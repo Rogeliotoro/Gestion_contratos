@@ -13,12 +13,13 @@
                 <h2>Sociedades</h2>
             </div>
             <div class="card-body">
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered table-sm">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>Display Name</th>
                             <th>Nombre</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,13 +28,18 @@
                             <td>{{ $society->id }}</td>
                             <td>{{ $society->displayName }}</td>
                             <td>{{ $society->name }}</td>
+                            <td>
+                                <a rel="tooltip" class="btn btn-default" href="{{ route('societies.show', $society->id) }}" data-original-title="" title="">
+                                    <i class=" fa-solid fa-eye " style="color: #5054b1;"></i>
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-               <div class="Page navigation example">
-               {!!$data->links()!!}
-               </div>
+                <div class="Page navigation example">
+                    {!!$data->links()!!}
+                </div>
             </div>
         </div>
-    @endsection
+        @endsection

@@ -17,7 +17,7 @@
                 @endcan
             </div>
             <div class="card-body">
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered table-sm">
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>

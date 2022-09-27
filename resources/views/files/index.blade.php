@@ -14,7 +14,7 @@
                             <h2 class="card-title ">Expedientes</h2>
                         </div>
                         <div class="card-body">               
-                                <table class="table table-hover table-bordered">
+                                <table class="table table-hover table-bordered table-sm">
                                     <thead class=" thead-dark">
                                         <th>ID</th>
                                         <th>Code</th>
