@@ -34,7 +34,6 @@
                                 </thead>
                                 @endcan
 
-
                                 @can('admin-soli')
                                 <thead class="table-secondary">
                                     <th>Solicitante</th>
@@ -91,11 +90,9 @@
                                             @endcan
 
                                             @can('post-delete')
-
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
                                             {{ Form::button('<i class="fa-solid fa-trash" style="color: #5054b1;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                             {!! Form::close() !!}
-
                                             @endcan
                                         </td>
                                     </tr>
@@ -157,7 +154,6 @@
                                     @endcan
                                 </tbody>
                             </table>
-                            
                             {!! $admin->links() !!}
                         </div>
                     </div>
