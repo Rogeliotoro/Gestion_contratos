@@ -45,7 +45,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $data->appends($_GET)->links() }}
+                {!!$data->links()!!}
             </div>
         </div>
     </div>
