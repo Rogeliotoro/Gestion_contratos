@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
                 <table class="table table-hover table-bordered table-sm">
-                    <thead class="thead-dark">
+                    <thead class="table-secondary">
                         <tr>
                             <th>ID</th>
                             <th>Code</th>

@@ -8,7 +8,7 @@
     </div>
     @endif
     <h1>{{ $post->objeto }}</h1>
-    <div class="card">
+    <div class="card shadow p-3 mb-5 bg-body rounded">
       <div class="card-header">
         @can('role-create')
         <span class="float-right">

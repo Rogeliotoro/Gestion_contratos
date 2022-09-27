@@ -8,13 +8,13 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
-        <div class="card">
+        <div class="card shadow p-3 mb-5 bg-body rounded">
             <div class="card-header">
                 <h2>Sociedades</h2>
             </div>
             <div class="card-body">
                 <table class="table table-hover table-bordered table-sm">
-                    <thead class="thead-dark">
+                    <thead class="table-secondary">
                         <tr>
                             <th>ID</th>
                             <th>Display Name</th>

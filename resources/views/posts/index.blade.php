@@ -11,7 +11,7 @@
         <h2>Solicitudes</h2>
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card shadow p-3 mb-5 bg-body rounded">
                     @can('post-create')
                     <div class="card-header">
                         <span class="float-right">
@@ -21,7 +21,7 @@
                     @endcan
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-hover table-bordered table-sm">
+                            <table class="table table-hover table-bordered table-sm ">
                                 @can('soli-soli')
                                 <thead class="table-secondary">
                                     <th>Objeto</th>
