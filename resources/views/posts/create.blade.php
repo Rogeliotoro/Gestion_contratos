@@ -33,7 +33,12 @@
                                     {!! Form::select('estado', array('Pendiente' => 'Pendiente') , null, ['class' => 'form-select']) !!}
                                 </div>
                             </div>
-                           
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <strong>Sociedades:</strong>
+                                    {!! Form::select('societies_id', $society, null, ['class' => 'form-select']) !!}
+                                </div>
+                            </div>
                         </div>
                         <div class="card border border-3 mb-3">
                             <div class="card-header">

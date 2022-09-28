@@ -26,7 +26,7 @@ class FileController extends Controller
     public function index(Request $request)
     {
         $data = File::latest()->paginate(20);
-
+    
         return view('files.index',compact('data'));
     }
 

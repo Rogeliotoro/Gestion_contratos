@@ -40,7 +40,7 @@ class PostsController extends Controller
         $file = File::pluck('code', 'id')->all();
         $ceco = Ceco::pluck('code', 'id')->all();
         
-        return view('posts.create', compact('society', 'file', 'ceco'));
+        return view('posts.create', compact( 'society', 'file', 'ceco'));
     }
 
     /**
@@ -55,6 +55,7 @@ class PostsController extends Controller
         Post::create(array_merge(
             $request->only(
                 'estado',
+                'societies_id',
                 'objeto',
                 'condiciones',
                 'observaciones',
@@ -73,8 +74,9 @@ class PostsController extends Controller
             ),
             [
                 'user_id' => auth()->id(),
-                'societies_id' => auth()->id()
+               
             ]
+
         ));
 
 
