@@ -33,7 +33,6 @@
                                     <th width="150px"></th>
                                 </thead>
                                 @endcan
-
                                 @can('admin-soli')
                                 <thead class="table-secondary">
                                     <th width="120px">Solicitante</th>
@@ -70,13 +69,10 @@
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-eye " style="color: #5054b1;"></i>
                                             </a>
-
                                             @can('post-edit')
-
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
-
                                             @endcan
                                             @can('soli-edit')
                                             @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
@@ -86,7 +82,6 @@
                                             @else
                                             @endif
                                             @endcan
-
                                             @can('post-delete')
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
                                             {{ Form::button('<i class="fa-solid fa-trash" style="color: #5054b1;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
@@ -96,7 +91,6 @@
                                     </tr>
                                     @endforeach
                                     @endcan
-
                                     @can('admin-soli')
                                     @foreach ($admin as $key => $post)
                                     <tr>
@@ -121,38 +115,30 @@
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.show', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-eye " style="color: #5054b1;"></i>
                                             </a>
-
                                             @can('post-edit')
-
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
-
                                             @endcan
                                             @can('soli-edit')
                                             @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
-
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
                                             @else
                                             @endif
                                             @endcan
-
                                             @can('post-delete')
-
                                             {!! Form::open(['method' => 'DELETE', 'route' => ['posts.destroy', $post->id], 'style' => 'display:inline']) !!}
                                             {{ Form::button('<i class="fa-solid fa-trash" style="color: #5054b1;"></i>', ['class' => 'btn btn-default', 'type' => 'submit']) }}
                                             {!! Form::close() !!}
-
                                             @endcan
                                         </td>
                                     </tr>
                                     @endforeach
                                     @endcan
                                 </tbody>
-                            </table>
-                        
+                            </table>        
                             <nav aria-label="...">
                                 <ul class="pagination pagination-xs">
                                 {!! $admin->links() !!}
@@ -162,7 +148,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

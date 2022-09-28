@@ -54,9 +54,10 @@
             </div>
           </div>
         </div>
-        
+
         @if($post->estado == 'Aprobado')
         <span class="float-right">
+          
         <a class="btn btn-outline-success btn-sm" href="{{ route('contracts.create') }}"> Generar Contrato <i class="far fa-handshake"></i></a>
         </span>
         @elseif($post->estado == '$')

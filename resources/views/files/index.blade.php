@@ -30,7 +30,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-
                         <nav aria-label="...">
                             <ul class="pagination pagination-sm">
                                 {!! $data->links() !!}
