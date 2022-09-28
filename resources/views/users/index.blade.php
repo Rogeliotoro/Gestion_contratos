@@ -7,7 +7,7 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
-        <h2>Usuarios</h2>
+        <h1>Usuarios</h1>
         
         <div class="card">
             <div class="card-header">
