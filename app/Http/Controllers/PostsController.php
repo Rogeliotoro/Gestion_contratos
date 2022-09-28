@@ -40,8 +40,7 @@ class PostsController extends Controller
         $file = File::pluck('code', 'id')->all();
         $ceco = Ceco::pluck('code', 'id')->all();
         
-
-        return view('posts.create', compact('society', 'society', 'file', 'ceco'));
+        return view('posts.create', compact('society', 'file', 'ceco'));
     }
 
     /**

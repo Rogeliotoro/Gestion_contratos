@@ -7,8 +7,8 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
-        
-        <div class="card">
+
+        <div class="card shadow p-3 mb-5 bg-body rounded">
             <div class="card-header">
                 <h2>Cecos</h2>
             </div>
@@ -31,7 +31,11 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $data->links() }}
+                <nav aria-label="...">
+                    <ul class="pagination pagination-xs">
+                        {!! $data->links() !!}
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

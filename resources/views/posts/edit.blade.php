@@ -13,7 +13,7 @@
         </div>
         @endif
         <h1>Editar Solicitud : {{ $post->id }}</h1>
-        <div class="card">
+        <div  class="card shadow p-3 mb-5 bg-body rounded">
             <div class="card-header">
                 <span class="float-right">
                     <a class="btn btn-primary btn-sm" href="{{ route('posts.index') }}">Atras</a>

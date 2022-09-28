@@ -36,14 +36,14 @@
 
                                 @can('admin-soli')
                                 <thead class="table-secondary">
-                                    <th>Solicitante</th>
+                                    <th width="120px">Solicitante</th>
                                     <th>Objeto</th>
                                     <th>Sociedad</th>
                                     <th>Fecha de Inicio</th>
                                     <th>Firmante</th>
                                     <th>Importe</th>
                                     <th>Estado</th>
-                                    <th width="140px"></th>
+                                    <th width="120px"></th>
                                 </thead>
                                 @endcan
                               <tbody>
@@ -100,7 +100,7 @@
                                     @can('admin-soli')
                                     @foreach ($admin as $key => $post)
                                     <tr>
-                                        <td><a class="btn btn-default btn-sm" style="color: #4330ad;" href="{{ route('users.show',$post->user->id) }}"><strong>{{ $post->user->name}}</strong></a></td>
+                                        <td><a class="btn btn-default btn-sm" style="color: #4330ad;" href="{{ route('users.show',$post->user->id) }}"><strong>{{ $post->user->name}} {{ $post->user->lastname}}</strong></a></td>
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
@@ -154,7 +154,7 @@
                             </table>
                         
                             <nav aria-label="...">
-                                <ul class="pagination pagination-sm">
+                                <ul class="pagination pagination-xs">
                                 {!! $admin->links() !!}
                                 </ul>
                             </nav>

@@ -25,6 +25,7 @@ class UserController extends Controller
          $this->middleware('permission:user-delete', ['only' => ['destroy']]);
          $this->middleware('auth', ['except' => [ 'profile']]);
          $this->middleware('permission:user-profile', ['only' => ['profile']]);
+       
     }
 
     /**
@@ -45,7 +46,6 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::find($id);
-        
         return view('users.profile', compact('user') );
     }
 
@@ -74,6 +74,7 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'lastname' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed',
             'roles' => 'required',
@@ -131,6 +132,7 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'lastname' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'confirmed',
             'roles' => 'required'
@@ -154,7 +156,7 @@ class UserController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('users.index')
-            ->with('success', 'User updated successfully.');
+            ->with('success', 'Usuario editado correctamente.');
     }
 
     /**

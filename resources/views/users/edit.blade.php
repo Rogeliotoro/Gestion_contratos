@@ -26,6 +26,10 @@
                     {!! Form::text('name', null, array('placeholder' => 'Nombre','class' => 'form-control')) !!}
                 </div>
                 <div class="form-group">
+                    <strong>Apellidos:</strong>
+                    {!! Form::text('lastname', null, array('placeholder' => 'Apellidos','class' => 'form-control')) !!}
+                </div>
+                <div class="form-group">
                     <strong>Email:</strong>
                     {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
                 </div>

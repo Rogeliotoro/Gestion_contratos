@@ -22,6 +22,10 @@
                     {{ $user->name }}
                 </div>
                 <div class="lead">
+                    <strong>Apellidos:</strong>
+                    {{ $user->lastname }}
+                </div>
+                <div class="lead">
                     <strong>Email:</strong>
                     {{ $user->email }}
                 </div>

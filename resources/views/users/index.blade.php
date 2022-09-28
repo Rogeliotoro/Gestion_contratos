@@ -7,7 +7,7 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
-        <h1>Usuarios</h1>
+        <h3>Usuarios</h2>
         
         <div class="card">
             <div class="card-header">
@@ -21,6 +21,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
+                            <th>Apellidos</th>
                             <th>Email</th>
                             <th>Roles</th>
                             <th>Sociedad</th>
@@ -32,6 +33,7 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
+                            <td>{{ $user->lastname }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
                                 @if(!empty($user->getRoleNames()))
