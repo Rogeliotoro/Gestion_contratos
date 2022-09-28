@@ -10,7 +10,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarScroll">
-                
+
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
                 <ul class="navbar-nav ml-auto">
                     @guest
@@ -98,7 +98,9 @@
                             <i class="fas fa-user-circle"></i> {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark bg-dark" aria-labelledby="navbarDropdown">
+                            @can('admin-list')
                             <li><a class="dropdown-item" href="{{ route('users.index') }}">Perfil</a></li>
+                            @endcan
                             <li> <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -118,4 +120,5 @@
         @yield('content')
     </main>
 </body>
+
 </html>

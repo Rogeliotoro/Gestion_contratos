@@ -56,10 +56,12 @@
         </div>
 
         @if($post->estado == 'Aprobado')
+        @can('post-admin-juri')
         <span class="float-right">
           
         <a class="btn btn-outline-success btn-sm" href="{{ route('contracts.create') }}"> Generar Contrato <i class="far fa-handshake"></i></a>
         </span>
+        @endcan
         @elseif($post->estado == '$')
         @endif
         @endcan
