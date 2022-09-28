@@ -46,8 +46,7 @@
                                     <th width="140px"></th>
                                 </thead>
                                 @endcan
-
-                                <tbody>
+                              <tbody>
                                     @can('soli-soli')
                                     @foreach ($data as $key => $post)
                                     <tr>
@@ -81,7 +80,6 @@
                                             @endcan
                                             @can('soli-edit')
                                             @if($post->estado == 'Rechazado' || $post->estado == 'Pendiente' )
-
                                             <a rel="tooltip" class="btn btn-default" href="{{ route('posts.edit', $post->id) }}" data-original-title="" title="">
                                                 <i class=" fa-solid fa-pen " style="color: #5054b1;"></i>
                                             </a>
