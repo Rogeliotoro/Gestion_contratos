@@ -23,24 +23,17 @@
           <a class="btn btn-outline-primary btn-sm" href="{{ route('notes.create') }}"> Nueva Nota <i class="fa-solid fa-file"></i></a>
         </span>
 
-        @if($post->estado == 'Aprobado')
-        <span class="float-right">
-        <a class="btn btn-outline-success btn-sm" href="{{ route('contracts.create') }}"> Generar Contrato <i class="far fa-handshake"></i></a>
-        </span>
-        @elseif($post->estado == '$')
-        @endif
-
         <!-- //////////////////////////////////////// -->
 
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Nueva Nota <i class="fa-solid fa-file"></i>
+          Nuevo Fichero <i class="fa-solid fa-file-pdf"></i>
         </button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Nueva Nota</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Fichero</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -61,7 +54,13 @@
             </div>
           </div>
         </div>
-
+        
+        @if($post->estado == 'Aprobado')
+        <span class="float-right">
+        <a class="btn btn-outline-success btn-sm" href="{{ route('contracts.create') }}"> Generar Contrato <i class="far fa-handshake"></i></a>
+        </span>
+        @elseif($post->estado == '$')
+        @endif
         @endcan
       </div>
       <div>

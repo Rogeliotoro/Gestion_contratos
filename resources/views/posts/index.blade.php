@@ -8,7 +8,7 @@
             <p>{{ \Session::get('success') }}</p>
         </div>
         @endif
-        <h2>Solicitudes</h2>
+        <h1>Solicitudes</h1>
         <div class="row">
             <div class="col-md-12">
                 <div class="card shadow p-3 mb-5 bg-body rounded">
@@ -26,7 +26,7 @@
                                 <thead class="table-secondary">
                                     <th>Objeto</th>
                                     <th>Sociedad</th>
-                                    <th >Fecha de Inicio</th>
+                                    <th>Fecha de Inicio</th>
                                     <th>Firmante</th>
                                     <th>Importe</th>
                                     <th>Estado</th>
@@ -102,7 +102,7 @@
                                     @can('admin-soli')
                                     @foreach ($admin as $key => $post)
                                     <tr>
-                                        <td><a class="btn btn-default btn-sm" style="color: #4330ad;"  href="{{ route('users.show',$post->user->id) }}"><strong>{{ $post->user->name}}</strong></a></td>
+                                        <td><a class="btn btn-default btn-sm" style="color: #4330ad;" href="{{ route('users.show',$post->user->id) }}"><strong>{{ $post->user->name}}</strong></a></td>
                                         <td>{{ $post->objeto }}</td>
                                         <td>{{ $post->society->name }}</td>
                                         <td>{{date('d-m-Y',strtotime($post->fecha_inicio))}}</td>
@@ -154,7 +154,12 @@
                                     @endcan
                                 </tbody>
                             </table>
-                            {!! $admin->links() !!}
+                        
+                            <nav aria-label="...">
+                                <ul class="pagination pagination-sm">
+                                {!! $admin->links() !!}
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>

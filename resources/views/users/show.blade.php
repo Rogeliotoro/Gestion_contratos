@@ -26,10 +26,6 @@
                     {{ $user->email }}
                 </div>
                 <div class="lead">
-                    <strong>Contraseña:</strong>
-                    ********
-                </div>
-                <div class="lead">
                     <strong>Rol:</strong>
                     {{ $user->getRoleNames() }}
                 </div>
