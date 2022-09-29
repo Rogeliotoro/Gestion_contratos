@@ -6,10 +6,8 @@ use App\Models\Ceco;
 use App\Models\File;
 use App\Models\Post;
 use App\Models\Society;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Spatie\Permission\Models\Role;
+
 
 class PostsController extends Controller
 {
@@ -26,6 +24,7 @@ class PostsController extends Controller
         $admin = Post::latest()->paginate(10);
         $data = Post::where('user_id', auth()->user()->id)->paginate(10);
         return view('posts.index', compact('data','admin'));
+
     }
 
 
@@ -39,8 +38,7 @@ class PostsController extends Controller
         $society = Society::pluck('name', 'id')->all();
         $file = File::pluck('code', 'id')->all();
         $ceco = Ceco::pluck('code', 'id')->all();
-        
-        
+    
         return view('posts.create', compact( 'society', 'file', 'ceco'));
     }
 
@@ -76,7 +74,6 @@ class PostsController extends Controller
             [
                 'user_id' => auth()->id(),
             ]
-
         ));
 
 
@@ -96,7 +93,6 @@ class PostsController extends Controller
         $society = Society::pluck('name', 'id')->all();
         $file = File::pluck('code', 'id')->all();
         $ceco = Ceco::pluck('code', 'id')->all();
-
         return view('posts.show', compact('post', 'society', 'file', 'ceco'));
     }
 
