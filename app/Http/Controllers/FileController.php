@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class FileController extends Controller
 {
@@ -28,6 +29,33 @@ class FileController extends Controller
         $data = File::latest()->paginate(20);
     
         return view('files.index',compact('data'));
+    }
+
+    public function api()
+    {
+        // URL
+        $apiURL = '';
+
+        // POST Data
+        $postInput = [
+            'title' => 'Sample Post',
+            'body' => "This is my sample curl post request with data",
+            'userId' => 22
+        ];
+  
+        // Headers
+        $headers = [
+            //...
+        ];
+  
+        $response = Http::withHeaders($headers)->post($apiURL, $postInput);
+  
+        $statusCode = $response->status();
+        $responseBody = json_decode($response->getBody(), true);
+      
+        echo $statusCode;  // status code
+
+        dd($responseBody); // body response
     }
 
 

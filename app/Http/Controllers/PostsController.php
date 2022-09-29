@@ -74,7 +74,6 @@ class PostsController extends Controller
             ),
             [
                 'user_id' => auth()->id(),
-               
             ]
 
         ));
