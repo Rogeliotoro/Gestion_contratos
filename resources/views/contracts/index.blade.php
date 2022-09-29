@@ -27,13 +27,14 @@
                                     <th width="150px"></th>
                                 </thead>
                                 <tbody>
+                                    @foreach ($data as $key => $contract)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>{{ $contract->id }}</td>
+                                        <td>{{ $contract->estado }}</td>
+                                        <td>{{ $contract->vigencia }}</td>
+                                        <td>{{ $contract->importancia }}</td>
+                                        <td>{{ $contract->urgencia }}</td>
+                                        <td>{{ $contract->tipologia }}</td>
                                         <td></td>
                                         <td></td>
                                         <td>
@@ -48,6 +49,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                             <nav aria-label="...">
