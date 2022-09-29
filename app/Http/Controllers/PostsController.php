@@ -87,15 +87,15 @@ class PostsController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show ($id)
     {
         $post = Post::find($id);
         $society = Society::pluck('name', 'id')->all();
-        $file = File::pluck('code', 'id')->all();
+        $file = File::pluck('code','id')->all();
         $ceco = Ceco::pluck('code', 'id')->all();
         return view('posts.show', compact('post', 'society', 'file', 'ceco'));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *

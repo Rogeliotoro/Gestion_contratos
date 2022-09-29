@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Ceco;
 use App\Models\Society;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request as Psr7Request;
 use Illuminate\Http\Request;
 
 class SocietyController extends Controller
@@ -15,8 +17,8 @@ class SocietyController extends Controller
      */
     function __construct()
     {
-         $this->middleware('permission:society-list', ['only' => ['index', 'show']]);
-
+        $this->middleware('permission:society-list', ['only' => ['index', 'show']]);
+  
     }
 
     /**
@@ -27,9 +29,8 @@ class SocietyController extends Controller
     public function index(Request $request)
     {
         $data = Society::paginate(20);
-
-        return view('societies.index',compact('data'));
-        
+ 
+        return view('societies.index', compact('data'));
     }
 
 
@@ -39,7 +40,4 @@ class SocietyController extends Controller
 
         return view('societies.show', compact('society'));
     }
-
 }
-
-

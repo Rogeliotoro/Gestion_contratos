@@ -7,7 +7,7 @@ use GuzzleHttp\Psr7\Request;
 
 class ApiController extends Controller
 {
-    public function Api()
+    public function Login()
     {
         $client = new Client();
         $headers = [
@@ -26,4 +26,52 @@ class ApiController extends Controller
         $res = $client->sendAsync($request, $options)->wait();
         echo $res->getBody();
     }
+
+    public  function society()
+    {
+        $client = new Client();
+        $headers = [
+            'Authorization' => 'Bearer'
+        ];
+        $request = new Request('GET', 'https://api.businesscentral.dynamics.com/v2.0/d473ae56-acdd-4bb7-9914-f33a177b6739/Production/api/v2.0/companies', $headers);
+        $res = $client->sendAsync($request)->wait();
+        echo $res->getBody();
+    }
+
+    public function project()
+    {
+
+        $client = new Client();
+        $headers = [
+            'Authorization' => 'Bearer'
+        ];
+        $request = new Request('GET', 'https://api.businesscentral.dynamics.com/v2.0/d473ae56-acdd-4bb7-9914-f33a177b6739/Sandbox_Secuoya/ODataV4/Company/Job_List?$select=No, Description,Status', $headers);
+        $res = $client->sendAsync($request)->wait();
+        echo $res->getBody();
+    }
+
+    public function file()
+    {
+        $client = new Client();
+        $headers = [
+            'Authorization' => 'Bearer '
+        ];
+        $request = new Request('GET', 'https://api.businesscentral.dynamics.com/v2.0/d473ae56-acdd-4bb7-9914-f33a177b6739/Sandbox_Secuoya/ODataV4/Company/valoresDimension', $headers);
+        $res = $client->sendAsync($request)->wait();
+        echo $res->getBody();
+    }
+
+
+    public function ceco()
+    {
+        $client = new Client();
+        $headers = [
+            'Authorization' => 'Bearer '
+        ];
+        $request = new Request('GET', 'https://api.businesscentral.dynamics.com/v2.0/d473ae56-acdd-4bb7-9914-f33a177b6739/Sandbox_Secuoya/ODataV4/Company/valoresDimension', $headers);
+        $res = $client->sendAsync($request)->wait();
+        echo $res->getBody();
+    }
+
+   
 }
