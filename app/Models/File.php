@@ -9,8 +9,8 @@ class File extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'code',
-        'name',
+        'Code',
+        'Name',
     ];
     
     public function post()
