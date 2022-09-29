@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ceco;
-use App\Models\File;
+
+use App\Models\Contract;
 use App\Models\Post;
-use App\Models\Society;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Spatie\Permission\Models\Role;
+
 
 class ContractController extends Controller
 {
@@ -23,14 +21,9 @@ class ContractController extends Controller
     public function index()
     {
 
-        return view('contracts.index');
+        $data = Contract::latest()->paginate(10);
+        return view('contracts.index', compact('data'));
     }
-
-    public function render()
-    {
-        
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -39,7 +32,10 @@ class ContractController extends Controller
      */
     public function create()
     {
-        return view('contracts.create');
+        $user = User::pluck('name', 'id')->all();
+        $post = Post::pluck('objeto', 'id')->all();
+
+        return view('contracts.create', compact('user', 'post'));
     }
 
     /**
@@ -48,14 +44,24 @@ class ContractController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    
+
     public function store(Request $request)
     {
-        
-          
-
-
-        
+        Contract::create(array_merge(
+            $request->only(
+                'vigencia',
+                'user_id',
+                'posts_id',
+                'estado',
+                'importancia',
+                'urgencia',
+                'tipologia',
+                'observaciones',
+                'comentarios',
+            ),
+        ));
+        return redirect()->route('contracts.index')
+            ->withSuccess(__('Contrato creada correctamente.'));
     }
 
     /**
@@ -66,7 +72,9 @@ class ContractController extends Controller
      */
     public function show($id)
     {
-        
+        $contract = Contract::find($id);
+
+        return view('contracts.show', compact('contract'));
     }
 
     /**
@@ -75,9 +83,13 @@ class ContractController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Contract $contract)
     {
-        
+        $user = User::pluck('name', 'id')->all();
+
+        return view('contracts.edit', compact('user'), [
+            'contract' => $contract
+        ]);
     }
 
     /**
@@ -87,9 +99,22 @@ class ContractController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Contract $contract)
     {
-        
+        $contract->update($request->only(
+            'vigencia',
+            'user_id',
+            'posts_id',
+            'estado',
+            'importancia',
+            'urgencia',
+            'tipologia',
+            'observaciones',
+            'comentarios',
+        ));
+
+        return redirect()->route('contracts.index')
+            ->withSuccess(__('Contracto editado correctamente.'));
     }
 
     /**
@@ -98,8 +123,11 @@ class ContractController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Contract $contract)
     {
-       
+        $contract->delete();
+
+        return redirect()->route('contracts.index')
+            ->withSuccess(__('Contrato borrado correctamente.'));
     }
 }
