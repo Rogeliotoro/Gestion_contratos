@@ -32,6 +32,8 @@ class ContractController extends Controller
      */
     public function create()
     {
+
+        
         $user = User::pluck('name', 'id')->all();
         $post = Post::pluck('objeto', 'id')->all();
 

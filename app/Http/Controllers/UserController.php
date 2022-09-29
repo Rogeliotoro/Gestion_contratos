@@ -59,6 +59,7 @@ class UserController extends Controller
     {
         $roles = Role::pluck('name','name')->all();
         $society = Society::pluck('name', 'id')->all();
+   
      
 
         return view('users.create', compact('roles','society'));
